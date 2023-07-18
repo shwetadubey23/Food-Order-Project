@@ -8,7 +8,7 @@ export default function Home() {
 
     const [search, setSearch] = useState("")
      const [foodCat, setFoodCat] = useState([])
-    const [foodItme, setFoodItme] = useState([])
+    const [foodItem, setFoodItem] = useState([])
 
     const loadData = async () => {
         let result = await fetch("http://localhost:5000/foodData", {
@@ -19,7 +19,7 @@ export default function Home() {
         })
 
         result = await result.json();
-        setFoodItme(result[0])
+        setFoodItem(result[0])
         setFoodCat(result[1])
         // console.log(result[0], result[1]);
     }
@@ -68,13 +68,14 @@ export default function Home() {
                                 {data.CategoryName}
                             </div>
                             <hr />
-                            {foodItme !== [] ? foodItme.filter((itme) => (itme.CategoryName === data.CategoryName) && (itme.name.toLowerCase().includes(search.toLowerCase())))
-                                .map(filterItmes => {
+                            {foodItem !== [] ? foodItem.filter((item) => (item.CategoryName === data.CategoryName) && (item.name.toLowerCase().includes(search.toLowerCase())))
+                                .map(filterItems => {
                                     return (
-                                        <div key={filterItmes._id} className='col-12 col-md-6 col-lg-3' >
-                                            <Card foodName={filterItmes.name}
-                                                options={filterItmes.options[0]}
-                                                imgSrc={filterItmes.img}   >
+                                        <div key={filterItems._id} className='col-12 col-md-6 col-lg-3' >
+                                            <Card foodItem={filterItems}
+                                                options={filterItems.options[0]}
+                                                // imgSrc={filterItems.img}   
+                                                >
                                             </Card>
                                         </div>
                                     )
