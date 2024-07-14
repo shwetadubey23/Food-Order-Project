@@ -36,13 +36,12 @@ mongoose.connect('mongodb+srv://Shwetadubey:QvtqJ8hdhmn0fhlT@cluster0.ymyddly.mo
 // })
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "food-order-project-chi.vercel.app:5000");
+  res.setHeader("Access-Control-Allow-Origin", "https://food-order-project-chi.vercel.app");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
-  next()
-
+  next();
 });
 
 app.use("/", route);
