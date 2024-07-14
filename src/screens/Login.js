@@ -9,7 +9,7 @@ let navigate = useNavigate()
 
   const handelLoginUser = async (eventCheck) => {
     eventCheck.preventDefault();
-    const response = await fetch("http://localhost:5000/login", {
+    const response = await fetch("food-order-project-chi.vercel.app:5000/login", {
       method: 'POST',
       headers: {
         'content-type': 'application/json; charset=utf-8'
