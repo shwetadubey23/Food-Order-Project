@@ -7,16 +7,15 @@ export default function Login() {
   const [loginUser, setLoginUser] = useState({ email: "", password: "" })
 let navigate = useNavigate()
 
-  const handelLoginUser = async (eventCheck) => {
-    eventCheck.preventDefault();
-    const response = await fetch("food-order-project-chi.vercel.app:5000/login", {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json; charset=utf-8'
-      },
-      body: JSON.stringify({ email: loginUser.email, password: loginUser.password })
-
-    });
+const handleLoginUser = async (eventCheck) => {
+  eventCheck.preventDefault();
+  const response = await fetch("https://food-order-project-chi.vercel.app:5000/login", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8'
+    },
+    body: JSON.stringify({ email: loginUser.email, password: loginUser.password })
+  });
     const json = await response.json()
     // console.log(json);
 
