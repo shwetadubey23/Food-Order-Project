@@ -38,7 +38,7 @@ const handleLoginUser = async (eventCheck) => {
   return (
     <>
       <div className='container'>
-        <form onSubmit={handelLoginUser}>
+        <form onSubmit={handleLoginUser}>
           <div className="mb-3">
             <label htmlFor="exampleInputEmail" className="form-label">Email address</label>
             <input type="email" className="form-control" id="exampleInputEmail" name='email' value={loginUser.email} onChange={changeData} />
