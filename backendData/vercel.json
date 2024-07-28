@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "https://food-order-project-chi.vercel.app/$1"
+    }
+  ]
+}
