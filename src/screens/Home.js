@@ -12,7 +12,7 @@ export default function Home() {
 
     const loadData = async () => {
         let result = await fetch("/", {
-            method: "POST",
+            method: "GET",
             headers: {
                 'content-type': 'application/json; charset=utf-8'
             }
