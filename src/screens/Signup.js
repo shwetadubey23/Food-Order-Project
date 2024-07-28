@@ -7,7 +7,7 @@ const [checkUser, setCheckUser] = useState({name: "", email: "", password: "", g
 
 const handelUser = async (eventCheck) => {
 eventCheck.preventDefault();
-const response = await fetch("https://food-order-project-chi.vercel.app:5000/user", {
+const response = await fetch("/user", {
   method: 'POST',
   headers: {
 'content-type': 'application/json; charset=utf-8'
