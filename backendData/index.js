@@ -12,7 +12,7 @@ const port = 5000
 //   optionsSuccessStatus: 200
 // };
 
-// app.use(cors(corsOptions));
+app.use(cors());
 
 
 mongoose.connect('mongodb+srv://Shwetadubey:QvtqJ8hdhmn0fhlT@cluster0.ymyddly.mongodb.net/OrderFood', 
@@ -43,15 +43,15 @@ mongoose.connect('mongodb+srv://Shwetadubey:QvtqJ8hdhmn0fhlT@cluster0.ymyddly.mo
 //   res.send('Hello World!')
 // })
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://food-order-project-navy.vercel.app/");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "https://food-order-project-navy.vercel.app/");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+//   next();
+// });
 
 app.use("/", route);
 
