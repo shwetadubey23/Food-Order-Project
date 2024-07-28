@@ -6,6 +6,14 @@ const app = express();
 app.use(express.json());
 const port = 5000
 
+// CORS configuration
+const corsOptions = {
+  origin: 'https://food-order-project-chi.vercel.app', // Update with your frontend domain
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+
 
 mongoose.connect('mongodb+srv://Shwetadubey:QvtqJ8hdhmn0fhlT@cluster0.ymyddly.mongodb.net/OrderFood', 
 { useNewUrlParser: true })
@@ -35,15 +43,15 @@ mongoose.connect('mongodb+srv://Shwetadubey:QvtqJ8hdhmn0fhlT@cluster0.ymyddly.mo
 //   res.send('Hello World!')
 // })
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://food-order-project-chi.vercel.app");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "https://food-order-project-chi.vercel.app");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+//   next();
+// });
 
 app.use("/", route);
 
