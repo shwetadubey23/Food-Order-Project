@@ -7,12 +7,12 @@ app.use(express.json());
 const port = 5000
 
 // CORS configuration
-// const corsOptions = {
-//   origin: 'https://food-order-project-chi.vercel.app', // Update with your frontend domain
-//   optionsSuccessStatus: 200
-// };
+const corsOptions = {
+  origin: 'https://food-order-project-navy.vercel.app', // Update with your frontend domain
+  optionsSuccessStatus: 200
+};
 
-app.use(cors());
+app.use(cors(corsOptions)); // Use cors with options
 
 
 mongoose.connect('mongodb+srv://Shwetadubey:QvtqJ8hdhmn0fhlT@cluster0.ymyddly.mongodb.net/OrderFood', 
