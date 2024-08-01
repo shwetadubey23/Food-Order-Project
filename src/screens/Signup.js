@@ -7,6 +7,7 @@ const [checkUser, setCheckUser] = useState({name: "", email: "", password: "", g
 
 const handelUser = async (eventCheck) => {
 eventCheck.preventDefault();
+try {
 const response = await fetch("https://food-order-project-navy.vercel.app/user", {
   method: 'POST',
   headers: {
@@ -15,11 +16,26 @@ const response = await fetch("https://food-order-project-navy.vercel.app/user", 
 body: JSON.stringify({name: checkUser.name, email: checkUser.email, password: checkUser.password, location: checkUser.geolocation})
   
 });
-const json = await response.json()
+// const json = await response.json()
+// console.log(json);
+
+// if(!json.success) {
+//   alert("Enter Vailid Data")
+// }
+
+if (!response.ok) {
+  throw new Error(`Server error: ${response.status}`);
+}
+
+const json = await response.json();
 console.log(json);
 
-if(!json.success) {
-  alert("Enter Vailid Data")
+if (!json.success) {
+  alert("Enter valid data");
+}
+} catch (error) {
+console.error('Error during signup:', error);
+alert('Failed to signup. Please try again.');
 }
 
 };
