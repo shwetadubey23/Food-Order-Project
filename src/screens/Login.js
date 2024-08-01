@@ -9,7 +9,7 @@ let navigate = useNavigate()
 
 const handleLoginUser = async (eventCheck) => {
   eventCheck.preventDefault();
-  const response = await fetch("https://food-order-project-navy.vercel.app:5000/login", {
+  const response = await fetch("https://food-order-project-navy.vercel.app/login", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json; charset=utf-8'
