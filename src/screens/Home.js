@@ -11,8 +11,8 @@ export default function Home() {
     const [foodItem, setFoodItem] = useState([])
 
     const loadData = async () => {
-        let result = await fetch("https://food-order-project-navy.vercel.app/", {
-            method: "GET",
+        let result = await fetch("https://food-order-project-navy.vercel.app/foodData", {
+            method: "POST",
             headers: {
                 'content-type': 'application/json; charset=utf-8'
             }
