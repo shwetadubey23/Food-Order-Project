@@ -16,7 +16,7 @@ const corsOptions = {
 app.use(cors(corsOptions)); // Use cors with options
 
 
-mongoose.connect('mongodb+srv://Shwetadubey:QvtqJ8hdhmn0fhlT@cluster0.ymyddly.mongodb.net/OrderFood', 
+mongoose.connect('mongodb+srv://shwetadubey:QvtqJ8hdhmn0fhlT@cluster0.hp6py6z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/OrderFood', 
 { useNewUrlParser: true })
   .then(() => {
     console.log("Database Connected");
