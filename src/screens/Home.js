@@ -11,8 +11,8 @@ export default function Home() {
     const [foodItem, setFoodItem] = useState([])
 
     const loadData = async () => {
-        let result = await fetch("https://food-order-project-navy.vercel.app/foodData", {
-            method: "POST",
+        let result = await fetch("/api/foodData", {
+            method: "GET",
             headers: {
                 'content-type': 'application/json; charset=utf-8'
             }
@@ -62,13 +62,13 @@ export default function Home() {
                  </div>
             <div className='container'>
                 {
-                    foodCat !== [] ? foodCat.map((data) => {
+                    foodCat.length !== 0 ? foodCat.map((data) => {
                         return (<div className='row mb-3'>
                             <div key={data._id} className="fs-3 m-3 " >
                                 {data.CategoryName}
                             </div>
                             <hr />
-                            {foodItem !== [] ? foodItem.filter((item) => (item.CategoryName === data.CategoryName) && (item.name.toLowerCase().includes(search.toLowerCase())))
+                            {foodItem.length !== 0 ? foodItem.filter((item) => (item.CategoryName === data.CategoryName) && (item.name.toLowerCase().includes(search.toLowerCase())))
                                 .map(filterItems => {
                                     return (
                                         <div key={filterItems._id} className='col-12 col-md-6 col-lg-3' >
