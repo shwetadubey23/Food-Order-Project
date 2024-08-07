@@ -10,6 +10,7 @@ const port = 5000
 // CORS configuration
 const corsOptions = {
   origin: 'https://food-order-project-navy.vercel.app', // Update with your frontend domain
+  // origin: 'http://localhost:5000', // Update with your frontend domain
   optionsSuccessStatus: 200
 };
 
@@ -22,6 +23,8 @@ mongoose.connect('mongodb+srv://shwetadubey:QvtqJ8hdhmn0fhlT@cluster0.hp6py6z.mo
     console.log("Database Connected");
     const fetched_data = mongoose.connection.db.collection("food_items");
     const foodCategory = mongoose.connection.db.collection("foodCategory");
+// console.log('fetched_data', fetched_data);
+// console.log('foodCategory', foodCategory);
 
     return Promise.all([
       fetched_data.find({}).toArray(),
@@ -54,7 +57,7 @@ mongoose.connect('mongodb+srv://shwetadubey:QvtqJ8hdhmn0fhlT@cluster0.hp6py6z.mo
 //   next();
 // });
 
-app.use("/", route);
+app.use("/api", route);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
