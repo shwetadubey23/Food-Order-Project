@@ -9,7 +9,7 @@ const port = 5000
 
 // CORS configuration
 const corsOptions = {
-  origin: 'https://food-order-project-navy.vercel.app', // Update with your frontend domain
+  origin: 'https://food-order-project-navy.vercel.app:5000', // Update with your frontend domain
   // origin: 'http://localhost:5000', // Update with your frontend domain
   optionsSuccessStatus: 200
 };

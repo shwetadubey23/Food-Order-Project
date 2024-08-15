@@ -8,4 +8,4 @@ const foodCategorySchema = new mongoose.Schema({
 
 },{ timeStamps: true});
 
-module.exports = mongoose.model('foodCategory', foodCategorySchema )
+module.exports = mongoose.model('FoodCategory', foodCategorySchema )
